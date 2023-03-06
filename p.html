@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Tulips</title>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script>
+        function checkFname(fname) {
+            e = fname;
+            for (var x = 0; x < e.length; x++) {
+                if (e[x] >= 'a' && e[x] <= 'z') {
+                    continue;
+                }
+                if (e[x] >= 'A' && e[x] <= 'Z') {
+                    continue;
+                }
+                return false;
+            }
+        }
+        function checkLname(lname) {
+            e = lname;
+            for (var x = 0; x < e.length; x++) {
+                if (e[x] >= 'a' && e[x] <= 'z') {
+                    continue;
+                }
+                if (e[x] >= 'A' && e[x] <= 'Z') {
+                    continue;
+                }
+                return false;
+            }
+        }
+        function checkEmail(mail) {
+            e = mail;
+            for (var x = 0; x < e.length; x++) {
+                if (e[x] == '@') {
+                    v = x;
+                    break;
+                }
+            }
+            for (var x = 0; x < e.length; x++) {
+                if (x >= 0 && x < v) {
+                    if ((e[x] >= '0' && e[x] <= '9') || (e[x] >= 'a' && e[x] <= 'z') || (e[x] >= 'A' && e[x] <= 'Z')) {
+                        continue;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+                if (x > v && x <= e.length()) {
+                    if ((e[x] >= '0' && e[x] <= '9') || (e[x] >= 'a' && e[x] <= 'z') || (e[x] >= 'A' && e[x] <= 'Z')) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            }
+        }
+        function validateForm() {
+
+                let s = document.forms["myForm"]["fname"].value;
+                if (checkFname(s) == false) {
+                    alert("Enter valid first name.");
+                    return false;
+                }
+                let sv = document.forms["myForm"]["lname"].value;
+                if (checkLname(sv) == false) {
+                    alert("Enter valid last name.");
+                    return false;
+                }
+                let x = document.forms["myForm"]["email"].value;
+                if (checkEmail(x) == false) {
+                    alert("Email Not of Format xyz@abc");
+                    return false;
+                }
+
+                let yx = document.forms["myForm"]["phno"].value
+                if (yx.length < 10) {
+                    alert("Phone number must contain total 10 digits.");
+                    return false;
+                }
+            }
+    </script>
+</head>
+
+<body>
+    <!-- header section starts  -->
+
+    <header>
+        <input type="checkbox" name="" id="toggler" />
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo">Tulips<span>.</span></a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#products">products</a>
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>fresh tulips</h3>
+            <span> natural & beautiful tulips </span>
+            <p>
+                Tulips are a genus of spring-blooming perennial herbaceous bulbiferous
+                geophytes. The flowers are usually large, showy and brightly coloured,
+                generally red, pink, yellow, or white.
+            </p>
+            <a href="#products" class="btn">shop now</a>
+        </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+        <h1 class="heading"><span> about </span> us</h1>
+
+        <div class="row">
+            <div class="video-container">
+                <img src="./images/t.jpg"></img>
+                <h3>best flower sellers</h3>
+            </div>
+
+            <div class="content">
+                <h3>why choose us?</h3>
+                <p>
+                    Tulips must be kept fresh and thus it must be stored in a cold
+                    storage.
+                </p>
+                <p>
+                    We have the world's best cold storage facility available with us to
+                    provide you farm fresh tulips for your loved ones.
+                </p>
+                <a href="https://www.dutchgrown.com/blogs/the-dutchgrown-blog/how-to-store-tulip-bulbs#:~:text=Like%20most%20flower%20bulbs%2C%20tulips,feel%20plump%2C%20heavy%20and%20firm."
+                    class="btn" target="_blank">learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section ends -->
+
+    <!-- icons section starts  -->
+
+    <section class="icons-container">
+        <div class="icons">
+            <img src="images/icon-1.png" alt="" />
+            <div class="info">
+                <h3>fast delivery</h3>
+                <span>on all orders</span>
+            </div>
+        </div>
+
+        <div class="icons">
+            <img src="images/icon-2.png" alt="" />
+            <div class="info">
+                <h3>10 days returns</h3>
+                <span>moneyback guarantee</span>
+            </div>
+        </div>
+
+        <div class="icons">
+            <img src="images/icon-3.png" alt="" />
+            <div class="info">
+                <h3>offer & gifts</h3>
+                <span>on all orders</span>
+            </div>
+        </div>
+
+        <div class="icons">
+            <img src="images/icon-4.png" alt="" />
+            <div class="info">
+                <h3>secure paymens</h3>
+                <span>protected by paypal</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- icons section ends -->
+
+    <!-- prodcuts section starts  -->
+
+    <section class="products" id="products">
+        <h1 class="heading">latest <span>products</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="image">
+                    <img src="images/img-1.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="./cart.html" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-15%</span>
+                <div class="image">
+                    <img src="images/img-2.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-5%</span>
+                <div class="image">
+                    <img src="images/img-3.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-20%</span>
+                <div class="image">
+                    <img src="images/img-4.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-17%</span>
+                <div class="image">
+                    <img src="images/img-5.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-3%</span>
+                <div class="image">
+                    <img src="images/img-6.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-18%</span>
+                <div class="image">
+                    <img src="images/img-7.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="image">
+                    <img src="images/img-8.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-5%</span>
+                <div class="image">
+                    <img src="images/img-9.jpg" alt="" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>flower pot</h3>
+                    <div class="price">$12.99 <span>$15.99</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- prodcuts section ends -->
+
+    <!-- review section starts  -->
+
+    <section class="review" id="review">
+        <h1 class="heading">customer's <span>review</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                    asperiores laboriosam praesentium enim maiores? Ad repellat
+                    voluptates alias facere repudiandae dolor accusamus enim ut odit,
+                    aliquam nesciunt eaque nulla dignissimos.
+                </p>
+                <div class="user">
+                    <img src="images/pic-1.png" alt="" />
+                    <div class="user-info">
+                        <h3>john deo</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>
+                <span class="fas fa-quote-right"></span>
+            </div>
+
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                    asperiores laboriosam praesentium enim maiores? Ad repellat
+                    voluptates alias facere repudiandae dolor accusamus enim ut odit,
+                    aliquam nesciunt eaque nulla dignissimos.
+                </p>
+                <div class="user">
+                    <img src="images/pic-2.png" alt="" />
+                    <div class="user-info">
+                        <h3>john deo</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>
+                <span class="fas fa-quote-right"></span>
+            </div>
+
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                    asperiores laboriosam praesentium enim maiores? Ad repellat
+                    voluptates alias facere repudiandae dolor accusamus enim ut odit,
+                    aliquam nesciunt eaque nulla dignissimos.
+                </p>
+                <div class="user">
+                    <img src="images/pic-3.png" alt="" />
+                    <div class="user-info">
+                        <h3>john deo</h3>
+                        <span>happy customer</span>
+                    </div>
+                </div>
+                <span class="fas fa-quote-right"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- review section ends -->
+
+    <!-- contact section starts  -->
+
+    <section class="contact" id="contact">
+        <h1 class="heading"><span> Register </span> Now</h1>
+
+        <div class="row">
+            <form name="myForm" onsubmit="return validateForm()">
+                <input type="text" name="fname" id="fname" placeholder="First Name" class="box" />
+                <input type="text" name="lname" id="lname" placeholder="Last Name" class="box" />
+                <input type="email" placeholder="Email-Id" name="email" id="email" class="box" />
+                <input type="tel" name="phno" id="PhoneNumber" placeholder="Phone Number" minlength="10" maxlength="10" required>
+                <textarea name="" class="box" placeholder="Address" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="send message" class="btn" />
+            </form>
+
+            <div class="image">
+                <img src="images/contact-img.svg" alt="" />
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#home">home</a>
+                <a href="#about">about</a>
+                <a href="#products">products</a>
+                <a href="#review">review</a>
+            </div>
+
+            <div class="box">
+                <h3>locations</h3>
+                <a href="#">india</a>
+                <a href="#">USA</a>
+                <a href="#">japan</a>
+                <a href="#">france</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#">+(91) 9879831288</a>
+                <a href="#">vedantpatel.com</a>
+                <a href="#">Ahmedabad, india - 380059</a>
+                <img src="images/payment.png" alt="" />
+            </div>
+        </div>
+
+        <div class="credit">
+            Copyright <span> © </span> 2022 | all rights reserved
+        </div>
+    </section>
+
+    <!-- footer section ends -->
+</body>
+
+</html>
